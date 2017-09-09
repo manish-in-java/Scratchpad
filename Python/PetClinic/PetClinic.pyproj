@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>85c21156-bfd5-4296-8d05-d706d6aac8a1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>PetClinic</Name>
+    <RootNamespace>PetClinic</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="runserver.py" />
+    <Compile Include="PetClinic\__init__.py" />
+    <Compile Include="PetClinic\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PetClinic\" />
+    <Folder Include="PetClinic\static\" />
+    <Folder Include="PetClinic\static\styles\" />
+    <Folder Include="PetClinic\static\fonts\" />
+    <Folder Include="PetClinic\static\scripts\" />
+    <Folder Include="PetClinic\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PetClinic\static\fonts\fontawesome.eot" />
+    <Content Include="PetClinic\static\fonts\fontawesome.otf" />
+    <Content Include="PetClinic\static\fonts\fontawesome.svg" />
+    <Content Include="PetClinic\static\fonts\fontawesome.ttf" />
+    <Content Include="PetClinic\static\fonts\fontawesome.woff" />
+    <Content Include="PetClinic\static\fonts\fontawesome.woff2" />
+    <Content Include="PetClinic\static\scripts\bootstrap.datatables.js" />
+    <Content Include="PetClinic\static\styles\bootstrap.datatables.css" />
+    <Content Include="PetClinic\static\styles\fontawesome.css" />
+    <Content Include="PetClinic\templates\pet.jade" />
+    <Content Include="PetClinic\templates\client.jade" />
+    <Content Include="PetClinic\templates\doctor.jade" />
+    <Content Include="requirements.txt" />
+    <Content Include="PetClinic\static\styles\bootstrap.css" />
+    <Content Include="PetClinic\static\styles\site.css" />
+    <Content Include="PetClinic\static\scripts\bootstrap.js" />
+    <Content Include="PetClinic\static\scripts\jquery.intellisense.js" />
+    <Content Include="PetClinic\static\scripts\jquery.js" />
+    <Content Include="PetClinic\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="PetClinic\static\scripts\jquery.validate.js" />
+    <Content Include="PetClinic\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="PetClinic\static\scripts\modernizr.js" />
+    <Content Include="PetClinic\static\scripts\respond.js" />
+    <Content Include="PetClinic\static\scripts\_references.js" />
+    <Content Include="PetClinic\templates\index.jade" />
+    <Content Include="PetClinic\templates\layout.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

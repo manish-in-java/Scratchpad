@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title Pet Clinic :: #{title}
+
+    link(rel='stylesheet', type='text/css', href='/static/styles/bootstrap.css')
+    link(rel='stylesheet', type='text/css', href='/static/styles/fontawesome.css')
+    link(rel='stylesheet', type='text/css', href='/static/styles/site.css')
+    block styles
+
+    script(src='/static/scripts/modernizr.js')
+    script(src='/static/scripts/jquery.js')
+    script(src='/static/scripts/bootstrap.js')
+    script(src='/static/scripts/respond.js')
+    block scripts
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/') Pet Clinic
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            li
+              a(href='/')
+                i.fa.fa-home()
+                |  Home
+            li
+              a(href='/doctor')
+                i.fa.fa-user-md
+                |  Veterinarians
+            li
+              a(href='/client')
+                i.fa.fa-user
+                |  Clients
+            li
+              a(href='/pet')
+                i.fa.fa-github-alt
+                |  Pets
+    .container.body-content
+      block content
+      hr
+      footer
+        p &copy; #{year} - All rights reserved.
