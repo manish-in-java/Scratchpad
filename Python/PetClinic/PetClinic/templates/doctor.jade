@@ -17,3 +17,10 @@ block content
                     tr
                         th First name
                         th Last name
+    .panel.panel-default
+        .panel-heading Add veterinarian
+        .panel-body
+            form.form-inline(method="POST")
+                input.form-control(autofocus, id="firstName", placeholder="First name", required, type="text")
+                input.form-control(id="lastName", placeholder="Last name", required, type="text")
+                button.btn.btn-primary(accesskey="s", title="Alt+S") Save &crarr;
