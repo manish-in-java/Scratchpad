@@ -1,6 +1,10 @@
 $(document).ready(function () {
     $('#doctors').DataTable({
         "ajax": "/doctor/page"
+        , "columns": [
+            { "data": "firstName" }
+            , { "data": "lastName" }
+        ]
         , "processing": true
         , "serverSide": true
         , "fnDrawCallback": function (settings) {

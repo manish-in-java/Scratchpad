@@ -15,3 +15,14 @@ class Pet(Entity):
 
     client = relationship('Client', back_populates = 'pets')
     clientID = Column(Integer, ForeignKey('client.id'))
+
+    '''
+    Serializes this entity as JSON.
+    '''
+    def serialize(self):
+        return {
+                "birthDate" : self.birthDate
+                , "client" : self.client.firstName + self.client.lastName
+                , "name" : self.name
+                , "type" : self.type
+            }

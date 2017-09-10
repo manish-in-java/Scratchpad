@@ -18,11 +18,16 @@ class Entity(Base):
     id = Column(Integer, primary_key = True)
 
     '''
-    Finds the number of entities.
+    Finds the number of entities matching specified criteria.
     '''
     @classmethod
-    def count(clazz):
-        return clazz.query().count()
+    def count(clazz, *criteria):
+        if (criteria is not None and len(criteria) > 0):
+            # Find the number of entities matching the specified criteria.
+            return clazz.query().filter(*criteria).count()
+        else:
+            # Find the number of all entities.
+            return clazz.query().count()
 
     '''
     Deletes this entity instance.
@@ -30,6 +35,13 @@ class Entity(Base):
     def delete(self):
         Session.delete(self)
         Session.flush
+
+    '''
+    Finds all entity instances matching specified criteria.
+    '''
+    @classmethod
+    def find(clazz, *criteria):
+        return clazz.query().filter(*criteria).all()
 
     '''
     Finds all entity instances.

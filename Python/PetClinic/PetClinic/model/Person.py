@@ -10,3 +10,12 @@ class Person(Entity):
 
     firstName = Column(String(50))
     lastName = Column(String(50))
+
+    '''
+    Serializes this entity as JSON.
+    '''
+    def serialize(self):
+        return {
+                "firstName" : self.firstName
+                , "lastName" : self.lastName
+            }

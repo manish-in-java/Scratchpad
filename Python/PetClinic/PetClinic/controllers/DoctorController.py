@@ -11,21 +11,43 @@ Gets a page of veterinarians.
 '''
 @app.route('/doctor/page', methods = ['GET'])
 def pageDoctors():
-    page = request.args.get('draw', type=int)
+    page = request.args.get('draw', 1, int)
+    total = Doctor.count()
 
-    return jsonify(
-        data = Doctor.page(page, 10, Doctor.firstName)
+    return jsonify(data = [doctor.serialize() for doctor in Doctor.page(page, 10, Doctor.firstName)]
         , draw = page
-        , recordsTotal = Doctor.count()
-        )
+        , recordsFiltered = total
+        , recordsTotal = total)
+
+'''
+Saves a veterinarian if one with the specified name does not already exist.
+'''
+@app.route('/doctor', methods = ['POST'])
+def saveDoctor():
+    # Extract first and last name from the request.
+    firstName = request.form['firstName'].strip().title()
+    lastName = request.form['lastName'].strip().title()
+
+    # If a doctor with the specified name already exists, display an error
+    # message.
+    if (Doctor.count(Doctor.firstName == firstName, Doctor.lastName == lastName) > 0):
+        return render_template('doctor.jade',
+            error='Unable to add the veterinarian because the specified name already exists.',
+            title='Veterinarians',
+            year=datetime.now().year)
+
+    # Add a new doctor with the specified name.
+    Doctor(firstName = firstName, lastName = lastName).save()
+
+    return render_template('doctor.jade',
+        title='Veterinarians',
+        year=datetime.now().year)
 
 '''
 Displays the Veterinarians Administration page.
 '''
 @app.route('/doctor', methods = ['GET'])
 def showDoctors():
-    return render_template(
-        'doctor.jade',
+    return render_template('doctor.jade',
         title='Veterinarians',
-        year=datetime.now().year
-    )
+        year=datetime.now().year)

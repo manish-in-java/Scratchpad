@@ -8,7 +8,8 @@ block scripts
     script(src='/static/scripts/doctor.js')
 
 block content
-    h1 #{title}
+    .page-header
+        h1 #{title}
 
     .panel.panel-default
         .panel-body
@@ -20,7 +21,11 @@ block content
     .panel.panel-default
         .panel-heading Add veterinarian
         .panel-body
+            if (error)
+                .alert.alert-danger
+                    i.fa.fa-warning
+                    |  #{error}
             form.form-inline(method="POST")
-                input.form-control(autofocus, id="firstName", placeholder="First name", required, type="text")
-                input.form-control(id="lastName", placeholder="Last name", required, type="text")
+                input.form-control(autofocus, id="firstName", name="firstName", placeholder="First name", required, type="text")
+                input.form-control(id="lastName", name="lastName", placeholder="Last name", required, type="text")
                 button.btn.btn-primary(accesskey="s", title="Alt+S") Save &crarr;
