@@ -1,9 +1,19 @@
 extends layout
 
 block styles
-    link(rel='stylesheet', type='text/css', href='/static/styles/bootstrap.datatables.css')
+    link(rel='stylesheet', type='text/css', href='/static/styles/datatables.css')
 
 block scripts
-    script(src='/static/scripts/bootstrap.datatables.js')
+    script(src='/static/scripts/datatables.js')
+    script(src='/static/scripts/doctor.js')
 
 block content
+    h1 #{title}
+
+    .panel.panel-default
+        .panel-body
+            table(id="doctors")
+                thead
+                    tr
+                        th First name
+                        th Last name

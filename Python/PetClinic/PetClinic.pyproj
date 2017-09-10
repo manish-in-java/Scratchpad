@@ -28,13 +28,35 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="PetClinic\controllers\HomeController.py" />
+    <Compile Include="PetClinic\controllers\DoctorController.py" />
+    <Compile Include="PetClinic\controllers\ClientController.py" />
+    <Compile Include="PetClinic\controllers\PetController.py" />
+    <Compile Include="PetClinic\model\Client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PetClinic\model\Doctor.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PetClinic\model\Entity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PetClinic\model\Person.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PetClinic\model\Pet.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="PetClinic\__init__.py" />
     <Compile Include="PetClinic\views.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PetClinic\" />
+    <Folder Include="PetClinic\model\" />
+    <Folder Include="PetClinic\controllers\" />
     <Folder Include="PetClinic\static\" />
+    <Folder Include="PetClinic\static\images\" />
     <Folder Include="PetClinic\static\styles\" />
     <Folder Include="PetClinic\static\fonts\" />
     <Folder Include="PetClinic\static\scripts\" />
@@ -47,8 +69,14 @@
     <Content Include="PetClinic\static\fonts\fontawesome.ttf" />
     <Content Include="PetClinic\static\fonts\fontawesome.woff" />
     <Content Include="PetClinic\static\fonts\fontawesome.woff2" />
-    <Content Include="PetClinic\static\scripts\bootstrap.datatables.js" />
-    <Content Include="PetClinic\static\styles\bootstrap.datatables.css" />
+    <Content Include="PetClinic\static\images\sort_asc.png" />
+    <Content Include="PetClinic\static\images\sort_asc_disabled.png" />
+    <Content Include="PetClinic\static\images\sort_both.png" />
+    <Content Include="PetClinic\static\images\sort_desc.png" />
+    <Content Include="PetClinic\static\images\sort_desc_disabled.png" />
+    <Content Include="PetClinic\static\scripts\datatables.js" />
+    <Content Include="PetClinic\static\scripts\doctor.js" />
+    <Content Include="PetClinic\static\styles\datatables.css" />
     <Content Include="PetClinic\static\styles\fontawesome.css" />
     <Content Include="PetClinic\templates\pet.jade" />
     <Content Include="PetClinic\templates\client.jade" />
