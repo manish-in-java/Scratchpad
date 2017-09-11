@@ -14,7 +14,7 @@ def pageDoctors():
     page = request.args.get('draw', 1, int)
     total = Doctor.count()
 
-    return jsonify(data = [doctor.serialize() for doctor in Doctor.page(page, 10, Doctor.firstName)]
+    return jsonify(data = [doctor.serialize() for doctor in Doctor.page(page, 10, Doctor.firstName, Doctor.lastName)]
         , draw = page
         , recordsFiltered = total
         , recordsTotal = total)

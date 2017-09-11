@@ -25,7 +25,11 @@ block content
                 .alert.alert-danger
                     i.fa.fa-warning
                     |  #{error}
-            form.form-inline(method="POST")
-                input.form-control(autofocus, id="firstName", name="firstName", placeholder="First name", required, type="text")
-                input.form-control(id="lastName", name="lastName", placeholder="Last name", required, type="text")
+            form(method="POST")
+                .form-group
+                    label(for="firstName") First name
+                    input.form-control(autofocus, id="firstName", name="firstName", placeholder="First name", required, type="text")
+                .form-group
+                    label(for="lastName") Last name
+                    input.form-control(id="lastName", name="lastName", placeholder="Last name", required, type="text")
                 button.btn.btn-primary(accesskey="s", title="Alt+S") Save &crarr;

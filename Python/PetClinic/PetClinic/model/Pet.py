@@ -21,7 +21,8 @@ class Pet(Entity):
     '''
     def serialize(self):
         return {
-                "birthDate" : self.birthDate
+                "id" : self.id
+                , "birthDate" : self.birthDate.strftime("%Y-%m-%d")
                 , "client" : self.client.firstName + self.client.lastName
                 , "name" : self.name
                 , "type" : self.type

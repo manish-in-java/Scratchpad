@@ -5,5 +5,51 @@ block styles
 
 block scripts
     script(src='/static/scripts/datatables.js')
+    script(src='/static/scripts/client.js')
 
 block content
+    .page-header
+        h1 #{title}
+
+    .panel.panel-default
+        .panel-body
+            table(id="clients")
+                thead
+                    tr
+                        th First name
+                        th Last name
+                        th Building
+                        th Town
+    .panel.panel-default
+        .panel-heading Add client
+        .panel-body
+            if (error)
+                .alert.alert-danger
+                    i.fa.fa-warning
+                    |  #{error}
+            form(method="POST")
+                .form-group
+                    label(for="firstName") First name:
+                    input.form-control(autofocus, id="firstName", name="firstName", placeholder="First name", required, type="text")
+                .form-group
+                    label(for="lastName") Last name:
+                    input.form-control(id="lastName", name="lastName", placeholder="Last name", required, type="text")
+                .form-group
+                    label(for="building") Apartment/ suite/ building:
+                    input.form-control(id="building", name="building", placeholder="Building", required, type="text")
+                .form-group
+                    label(for="street") Street:
+                    input.form-control(id="street", name="street", placeholder="Street", required, type="text")
+                .form-group
+                    label(for="locality") Locality:
+                    input.form-control(id="locality", name="locality", placeholder="Locality", type="text")
+                .form-group
+                    label(for="town") City/ town:
+                    input.form-control(id="town", name="town", placeholder="Town", required, type="text")
+                .form-group
+                    label(for="province") State:
+                    input.form-control(id="province", name="province", placeholder="State", required, type="text")
+                .form-group
+                    label(for="postCode") Post code:
+                    input.form-control(id="postCode", name="postCode", placeholder="Post code", required, type="text")
+                button.btn.btn-primary(accesskey="s", title="Alt+S") Save &crarr;

@@ -61,8 +61,8 @@ class Entity(Base):
     Finds a single page of entity instances.
     '''
     @classmethod
-    def page(clazz, page, records, order):
-        return clazz.query().order_by(order).limit(records).offset((page - 1) * records).all()
+    def page(clazz, page, records, *order):
+        return clazz.query().order_by(*order).limit(records).offset((page - 1) * records).all()
 
     '''
     Creates an ad-hoc query for the domain entity.

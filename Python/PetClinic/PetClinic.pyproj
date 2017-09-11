@@ -75,6 +75,7 @@
     <Content Include="PetClinic\static\images\sort_desc.png" />
     <Content Include="PetClinic\static\images\sort_desc_disabled.png" />
     <Content Include="PetClinic\static\scripts\datatables.js" />
+    <Content Include="PetClinic\static\scripts\client.js" />
     <Content Include="PetClinic\static\scripts\doctor.js" />
     <Content Include="PetClinic\static\styles\datatables.css" />
     <Content Include="PetClinic\static\styles\fontawesome.css" />

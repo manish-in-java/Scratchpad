@@ -16,6 +16,7 @@ class Person(Entity):
     '''
     def serialize(self):
         return {
-                "firstName" : self.firstName
+                "id" : self.id
+                , "firstName" : self.firstName
                 , "lastName" : self.lastName
             }

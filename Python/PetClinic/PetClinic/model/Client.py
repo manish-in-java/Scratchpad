@@ -11,8 +11,6 @@ class Client(Person):
     __tablename__ = 'client'
 
     building = Column(String(50))
-    country = Column(String(50))
-    district = Column(String(50))
     locality = Column(String(50))
     postCode = Column(String(50))
     province = Column(String(50))
@@ -26,7 +24,8 @@ class Client(Person):
     '''
     def serialize(self):
         return {
-                "building" : self.building
+                "id" : self.id
+                , "building" : self.building
                 , "country" : self.country
                 , "district" : self.district
                 , "firstName" : self.firstName
