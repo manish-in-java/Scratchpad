@@ -1,0 +1,1 @@
+Collection of Microsoft Visual Studio 2017 projects.

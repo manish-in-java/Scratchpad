@@ -82,6 +82,7 @@
     <Content Include="PetClinic\templates\pet.jade" />
     <Content Include="PetClinic\templates\client.jade" />
     <Content Include="PetClinic\templates\doctor.jade" />
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="PetClinic\static\styles\bootstrap.css" />
     <Content Include="PetClinic\static\styles\site.css" />
