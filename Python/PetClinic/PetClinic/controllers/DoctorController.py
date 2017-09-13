@@ -32,7 +32,7 @@ def saveDoctor():
     # message.
     if (Doctor.count(Doctor.firstName == firstName, Doctor.lastName == lastName) > 0):
         return render_template('doctor.jade',
-            error='Unable to add the veterinarian because the specified name already exists.',
+            error='Unable to add veterinarian because the specified name already exists.',
             title='Veterinarians',
             year=datetime.now().year)
 

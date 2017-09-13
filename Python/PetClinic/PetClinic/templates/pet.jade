@@ -7,3 +7,28 @@ block scripts
     script(src='/static/scripts/datatables.js')
 
 block content
+    .page-header
+        h1
+            i.fa.fa-github-alt
+            |  #{title}
+
+    .panel.panel-default
+        .panel-body
+            table(id="pets")
+                thead
+                    tr
+                        th Name
+                        th Birth date
+                        th Type
+                        th Client
+    .panel.panel-default
+        .panel-heading Add pet
+        .panel-body
+            if (error)
+                .alert.alert-danger
+                    i.fa.fa-warning
+                    |  #{error}
+            form(method="POST")
+                .form-group
+                    label(for="name") Name:
+                    input.form-control(autofocus, id="name", name="name", placeholder="Name", required, type="text")

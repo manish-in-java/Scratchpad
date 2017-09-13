@@ -36,7 +36,7 @@ def saveClient():
     # message.
     if (Client.count(Client.firstName == firstName, Client.lastName == lastName) > 0):
         return render_template('client.jade',
-            error='Unable to add the client because the specified name already exists.',
+            error='Unable to add client because the specified name already exists.',
             title='Clients',
             year=datetime.now().year)
 

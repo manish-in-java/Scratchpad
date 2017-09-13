@@ -26,13 +26,12 @@ class Client(Person):
         return {
                 "id" : self.id
                 , "building" : self.building
-                , "country" : self.country
-                , "district" : self.district
                 , "firstName" : self.firstName
                 , "lastName" : self.lastName
                 , "locality" : self.locality
                 , "postCode" : self.postCode
+                , "province" : self.province
                 , "street" : self.street
                 , "town" : self.town
-                , "pets" : [pet.serialize() for pet in pets]
+                , "pets" : [pet.serialize() for pet in self.pets]
             }

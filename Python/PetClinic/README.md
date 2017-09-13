@@ -4,7 +4,7 @@
 web application that demonstrates various features of the Java-based
 [Spring framework](https://spring.io).
 
-This sample application that replicates the functionality of the Pet Clinic
+This sample application replicates the functionality of the Pet Clinic
 application using the following:
 
 1. [Python programming language](https://www.python.org),
