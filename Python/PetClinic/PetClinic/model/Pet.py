@@ -3,10 +3,17 @@ from sqlalchemy.orm import relationship
 
 from .Entity import Entity
 
-'''
-Represents a pet.
-'''
 class Pet(Entity):
+    """
+    Represents a pet that has been brought to the pet clinic at least once.
+
+    Extends:
+        Entity
+    Attributes:
+        birthDate   The date of birth for the pet.
+        name        The pet name.
+        type        The type of pet.
+    """
     __tablename__ = 'pet'
 
     birthDate = Column(Date)
@@ -14,16 +21,16 @@ class Pet(Entity):
     type = Column(String(50))
 
     client = relationship('Client', back_populates = 'pets')
-    clientID = Column(Integer, ForeignKey('client.id'))
+    __clientID = Column(Integer, ForeignKey('client.id'))
 
-    '''
-    Serializes this entity as JSON.
-    '''
     def serialize(self):
+        """
+        Serializes this entity as JSON.
+        """
         return {
                 "id" : self.id
                 , "birthDate" : self.birthDate.strftime("%Y-%m-%d")
-                , "client" : self.client.firstName + self.client.lastName
-                , "name" : self.name
-                , "type" : self.type
+                , "client" : "" + self.client.name + ""
+                , "name" : "" + self.name + ""
+                , "type" : "" + self.type + ""
             }

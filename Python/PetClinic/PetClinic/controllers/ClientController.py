@@ -4,11 +4,11 @@ from flask import jsonify, render_template, request
 from PetClinic import app
 from PetClinic.model.Client import Client
 
-'''
-Gets a page of clients.
-'''
 @app.route('/client/page', methods = ['GET'])
 def pageClients():
+    """
+    Gets a page of clients.
+    """
     page = request.args.get('draw', 1, int)
     total = Client.count()
 
@@ -17,11 +17,11 @@ def pageClients():
         , recordsFiltered = total
         , recordsTotal = total)
 
-'''
-Saves a client if one with the specified name does not already exist.
-'''
 @app.route('/client', methods = ['POST'])
 def saveClient():
+    """
+    Saves a client if one with the specified name does not already exist.
+    """
     # Extract data from the request.
     building = request.form['building'].strip().title()
     firstName = request.form['firstName'].strip().title()
@@ -35,10 +35,7 @@ def saveClient():
     # If a client with the specified name already exists, display an error
     # message.
     if (Client.count(Client.firstName == firstName, Client.lastName == lastName) > 0):
-        return render_template('client.jade',
-            error='Unable to add client because the specified name already exists.',
-            title='Clients',
-            year=datetime.now().year)
+        return showClients(error='Unable to add client because a client with the specified name already exists.')
 
     # Add a new client with the specified details.
     Client(firstName = firstName
@@ -50,15 +47,14 @@ def saveClient():
            , province = province
            , postCode = postCode).save()
 
-    return render_template('client.jade',
-        title='Clients',
-        year=datetime.now().year)
+    return showClients()
 
-'''
-Displays the Clients Administration page.
-'''
 @app.route('/client')
-def showClients():
-    return render_template('client.jade',
-        title='Clients',
-        year=datetime.now().year)
+def showClients(**context):
+    """
+    Displays the Clients Administration page.
+    """
+    model = dict(title='Clients', year=datetime.now().year)
+    model.update(context)
+
+    return render_template('client.jade', **model)

@@ -1,9 +1,11 @@
 $(document).ready(function () {
-    $('#doctors').DataTable({
-        "ajax": "/doctor/page"
+    $('#pets').DataTable({
+        "ajax": "/pet/page"
         , "columns": [
-            { "data": "firstName" }
-            , { "data": "lastName" }
+            { "data": "name" }
+            , { "data": "birthDate" }
+            , { "data": "type" }
+            , { "data": "client" }
         ]
         , "processing": true
         , "serverSide": true
@@ -17,5 +19,12 @@ $(document).ready(function () {
                 pager.show()
             }
         }
+    });
+
+    $("#birthDate").datepicker({
+        format: "dd MM yyyy",
+        autoclose: true,
+        todayBtn: true,
+        minuteStep: 10
     });
 });

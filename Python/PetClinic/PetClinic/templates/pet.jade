@@ -5,6 +5,7 @@ block styles
 
 block scripts
     script(src='/static/scripts/datatables.js')
+    script(src='/static/scripts/pet.js')
 
 block content
     .page-header
@@ -32,3 +33,36 @@ block content
                 .form-group
                     label(for="name") Name:
                     input.form-control(autofocus, id="name", name="name", placeholder="Name", required, type="text")
+                .form-group
+                    label(for="birthDate") Date of birth:
+                    .input-group
+                        input.form-control(id="birthDate", name="birthDate", readonly, required, type="text")
+                        .input-group-addon
+                            i.fa.fa-times
+                        .input-group-addon
+                            i.fa.fa-calendar
+                .form-group
+                    label(for="client") Client:
+                    select.form-control(id="client", name="client", required)
+                        option(value="") Choose...
+                        for client in clients
+                            option(value="#{client.id}") #{client.firstName + " " + client.lastName}
+                .form-group
+                    label(for="type") Type:
+                    select.form-control(id="type", name="type", required)
+                        option(value="") Choose...
+                        option(value="Cat") Cat
+                        option(value="Dog") Dog
+                        option(value="Eagle") Eagle
+                        option(value="Falcon") Falcon
+                        option(value="Ferret") Ferret
+                        option(value="Fish") Fish
+                        option(value="Hamster") Hamster
+                        option(value="Hawk") Hawk
+                        option(value="Owl") Owl
+                        option(value="Pigeon") Pigeon
+                        option(value="Parrot") Parrot
+                        option(value="Rabbit") Rabbit
+                        option(value="Snake") Snake
+                        option(value="Turtle") Turtle
+                button.btn.btn-primary(accesskey="s", title="Alt+S") Save &crarr;

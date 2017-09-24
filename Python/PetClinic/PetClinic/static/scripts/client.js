@@ -10,7 +10,6 @@ $(document).ready(function () {
         , "processing": true
         , "serverSide": true
         , "fnDrawCallback": function (settings) {
-            console.log();
             var pager = $(settings.nTableWrapper).find(".dataTables_paginate")
             if (settings._iDisplayLength == -1
                 || settings._iDisplayLength > settings.fnRecordsDisplay()
