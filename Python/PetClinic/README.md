@@ -26,7 +26,7 @@ This sample application currently supports the following functionality:
     * View a list of all veterinarians who work at the clinic
     * Add a veterinarian
 * Clients
-    * View a list of all client who have ever visited the clinic
+    * View a list of all clients who have ever visited the clinic
     * Add a client
 * Pets
     * View a list of all pets who have ever visited the clinic
@@ -39,6 +39,9 @@ The following functionality needs to be added to this sample:
 * Employees (other than veterinarians)
     * View a list of all employees who work at the clinic
     * Add an employee
+    * Flag employees that can sign in to use the application
+    * Assign sign-in credentials to employees
+    * Force employees to sign-in
 * Visits
     * View all visits for a pet
     * Schedule a visit for a pet
@@ -47,7 +50,7 @@ The following functionality needs to be added to this sample:
     * Capture details for a pet like weight, height, body temperature, etc. during a visit
 * Procedures
     * View all procedures undertaken for a pet
-    * Schedule a procedute for a pet
+    * Schedule a procedure for a pet
     * Add a procedure for a pet
     * Capture details for a procedure
 * Reports
